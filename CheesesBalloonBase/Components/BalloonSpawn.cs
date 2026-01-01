@@ -21,7 +21,7 @@ public class BalloonSpawn : AIUnitSpawn
         phyiscs.SetTargetAlt(defaultAltitude);
     }
 
-    [VTEvent("Set Waypoint", "Command the baloon to magically move towards a waypoint.", new string[]
+    [VTEvent("Set Waypoint", "Command the balloon to magically move towards a waypoint.", new string[]
     {
         "Waypoint"
     })]

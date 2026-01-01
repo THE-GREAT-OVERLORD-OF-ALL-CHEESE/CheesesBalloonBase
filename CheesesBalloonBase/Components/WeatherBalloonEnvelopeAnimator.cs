@@ -2,7 +2,7 @@
 
 namespace CheeseMods.CheesesBalloonBase.Components;
 
-public class WeatherBaloonEnvelopeAnimator : MonoBehaviour
+public class WeatherBalloonEnvelopeAnimator : MonoBehaviour
 {
     public Health health;
     public GameObject envelopeGo;
