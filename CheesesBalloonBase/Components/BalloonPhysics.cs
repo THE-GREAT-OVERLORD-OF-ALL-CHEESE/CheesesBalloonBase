@@ -114,7 +114,7 @@ public class BalloonPhysics : MonoBehaviour, IWindReceiver
         velOffset.y = 0;
         acceleration += Vector3.ClampMagnitude(velOffset, magicTraverseAcceleration);
 
-        rb.AddForceAtPosition(acceleration, col.position);
+        rb.AddForceAtPosition(acceleration, col.position, ForceMode.Acceleration);
     }
 
     private void UpdateSpinning()
@@ -129,7 +129,7 @@ public class BalloonPhysics : MonoBehaviour, IWindReceiver
         float currentSpinSpeed = rb.angularVelocity.y;
         float targetSpinSpeed = spinSpeed * Mathf.Deg2Rad;
 
-        rb.AddTorque(Vector3.up * Mathf.Clamp((targetSpinSpeed - currentSpinSpeed) / Time.fixedDeltaTime, -maxSpinAcceleration * Mathf.Deg2Rad, maxSpinAcceleration * Mathf.Deg2Rad));
+        rb.AddTorque(Vector3.up * Mathf.Clamp((targetSpinSpeed - currentSpinSpeed) / Time.fixedDeltaTime, -maxSpinAcceleration * Mathf.Deg2Rad, maxSpinAcceleration * Mathf.Deg2Rad), ForceMode.Acceleration);
     }
 
     private void UpdateDeadPhysics()
